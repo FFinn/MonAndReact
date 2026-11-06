@@ -1,0 +1,338 @@
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1323,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "verbs": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "get",
+          "doc_count": 536
+        },
+        {
+          "key": "update",
+          "doc_count": 372
+        },
+        {
+          "key": "watch",
+          "doc_count": 280
+        },
+        {
+          "key": "create",
+          "doc_count": 83
+        },
+        {
+          "key": "list",
+          "doc_count": 22
+        },
+        {
+          "key": "patch",
+          "doc_count": 16
+        },
+        {
+          "key": "delete",
+          "doc_count": 14
+        }
+      ]
+    },
+    "resources": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 67,
+      "buckets": [
+        {
+          "key": "leases",
+          "doc_count": 429
+        },
+        {
+          "key": "pods",
+          "doc_count": 51
+        },
+        {
+          "key": "subjectaccessreviews",
+          "doc_count": 51
+        },
+        {
+          "key": "endpoints",
+          "doc_count": 32
+        },
+        {
+          "key": "endpointslices",
+          "doc_count": 31
+        },
+        {
+          "key": "configmaps",
+          "doc_count": 30
+        },
+        {
+          "key": "clusterinformations",
+          "doc_count": 27
+        },
+        {
+          "key": "clusterrolebindings",
+          "doc_count": 18
+        },
+        {
+          "key": "nodes",
+          "doc_count": 18
+        },
+        {
+          "key": "events",
+          "doc_count": 16
+        },
+        {
+          "key": "serviceaccounts",
+          "doc_count": 16
+        },
+        {
+          "key": "services",
+          "doc_count": 16
+        },
+        {
+          "key": "clusterroles",
+          "doc_count": 15
+        },
+        {
+          "key": "namespaces",
+          "doc_count": 15
+        },
+        {
+          "key": "ipamhandles",
+          "doc_count": 12
+        },
+        {
+          "key": "ippools",
+          "doc_count": 11
+        },
+        {
+          "key": "secrets",
+          "doc_count": 11
+        },
+        {
+          "key": "blockaffinities",
+          "doc_count": 10
+        },
+        {
+          "key": "ipamblocks",
+          "doc_count": 8
+        },
+        {
+          "key": "ipreservations",
+          "doc_count": 8
+        },
+        {
+          "key": "mutatingwebhookconfigurations",
+          "doc_count": 8
+        },
+        {
+          "key": "networkpolicies",
+          "doc_count": 8
+        },
+        {
+          "key": "csidrivers",
+          "doc_count": 7
+        },
+        {
+          "key": "daemonsets",
+          "doc_count": 7
+        },
+        {
+          "key": "jobs",
+          "doc_count": 7
+        },
+        {
+          "key": "bgppeers",
+          "doc_count": 6
+        },
+        {
+          "key": "caliconodestatuses",
+          "doc_count": 6
+        },
+        {
+          "key": "persistentvolumeclaims",
+          "doc_count": 6
+        },
+        {
+          "key": "resourcequotas",
+          "doc_count": 6
+        },
+        {
+          "key": "rolebindings",
+          "doc_count": 6
+        },
+        {
+          "key": "validatingwebhookconfigurations",
+          "doc_count": 6
+        },
+        {
+          "key": "poddisruptionbudgets",
+          "doc_count": 5
+        },
+        {
+          "key": "apiservers",
+          "doc_count": 4
+        },
+        {
+          "key": "bgpfilters",
+          "doc_count": 4
+        },
+        {
+          "key": "cronjobs",
+          "doc_count": 4
+        },
+        {
+          "key": "felixconfigurations",
+          "doc_count": 4
+        },
+        {
+          "key": "globalnetworkpolicies",
+          "doc_count": 4
+        },
+        {
+          "key": "installations",
+          "doc_count": 4
+        },
+        {
+          "key": "ipamconfigs",
+          "doc_count": 4
+        },
+        {
+          "key": "kubecontrollersconfigurations",
+          "doc_count": 4
+        }
+      ]
+    },
+    "users": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "system:serviceaccount:tigera-operator:tigera-operator",
+          "doc_count": 268
+        },
+        {
+          "key": "system:anonymous",
+          "doc_count": 259
+        },
+        {
+          "key": "system:kube-controller-manager",
+          "doc_count": 203
+        },
+        {
+          "key": "system:kube-scheduler",
+          "doc_count": 125
+        },
+        {
+          "key": "system:apiserver",
+          "doc_count": 111
+        },
+        {
+          "key": "system:serviceaccount:calico-apiserver:calico-apiserver",
+          "doc_count": 81
+        },
+        {
+          "key": "system:node:fhm9do9pul5klkohia9h",
+          "doc_count": 64
+        },
+        {
+          "key": "system:serviceaccount:calico-system:calico-kube-controllers",
+          "doc_count": 53
+        },
+        {
+          "key": "system:serviceaccount:calico-system:calico-cni-plugin",
+          "doc_count": 47
+        },
+        {
+          "key": "kubernetes-admin",
+          "doc_count": 19
+        },
+        {
+          "key": "system:serviceaccount:kube-system:generic-garbage-collector",
+          "doc_count": 16
+        },
+        {
+          "key": "system:serviceaccount:kube-system:resourcequota-controller",
+          "doc_count": 16
+        },
+        {
+          "key": "system:serviceaccount:kube-system:metrics-server",
+          "doc_count": 14
+        },
+        {
+          "key": "system:serviceaccount:kube-system:coredns",
+          "doc_count": 8
+        },
+        {
+          "key": "system:serviceaccount:kube-system:job-controller",
+          "doc_count": 8
+        },
+        {
+          "key": "system:serviceaccount:calico-system:calico-typha",
+          "doc_count": 7
+        },
+        {
+          "key": "system:serviceaccount:kube-system:kube-proxy",
+          "doc_count": 7
+        },
+        {
+          "key": "system:serviceaccount:local-path-storage:local-path-provisioner-service-account",
+          "doc_count": 6
+        },
+        {
+          "key": "system:serviceaccount:kube-system:cronjob-controller",
+          "doc_count": 5
+        },
+        {
+          "key": "system:serviceaccount:monitoring-system:default",
+          "doc_count": 4
+        },
+        {
+          "key": "system:serviceaccount:kube-system:root-ca-cert-publisher",
+          "doc_count": 1
+        },
+        {
+          "key": "system:serviceaccount:kube-system:service-account-controller",
+          "doc_count": 1
+        }
+      ]
+    },
+    "timeline": {
+      "buckets": [
+        {
+          "key_as_string": "2026-11-06T11:08:00.000Z",
+          "key": 1793963280000,
+          "doc_count": 392
+        },
+        {
+          "key_as_string": "2026-11-06T11:09:00.000Z",
+          "key": 1793963340000,
+          "doc_count": 282
+        },
+        {
+          "key_as_string": "2026-11-06T11:10:00.000Z",
+          "key": 1793963400000,
+          "doc_count": 371
+        },
+        {
+          "key_as_string": "2026-11-06T11:11:00.000Z",
+          "key": 1793963460000,
+          "doc_count": 278
+        }
+      ]
+    }
+  }
+}

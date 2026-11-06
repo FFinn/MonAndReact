@@ -1,0 +1,38 @@
+{
+  "collector": "Codex acting for repository owner s2417991",
+  "host": "fhm9do9pul5klkohia9h",
+  "method": "SSH host-key verification; read-only log copies; UTF-8/JSON excerpts derived locally",
+  "archive_sha256": "17e64652d710e6afff4f10ae7aa966e44e05ce285417168cc9c80179386852a6",
+  "originals_storage": "Private local work/dso11/original-evidence.zip, excluded from repositories",
+  "access": "Account owner and agent in this session; no independent forensic sealing/access audit",
+  "files": [
+    {
+      "source": "/var/log/auth.log",
+      "collection_start": "2026-11-06T11:14:21.315601+00:00",
+      "collection_end": "2026-11-06T11:14:22.030073+00:00",
+      "bytes": 31844,
+      "sha256": "508feb1e5f20669934ce3fdf7bca2967a8b3afb548d481128e9bb9b2ba5ee5da"
+    },
+    {
+      "source": "/var/log/syslog",
+      "collection_start": "2026-11-06T11:14:22.039794+00:00",
+      "collection_end": "2026-11-06T11:14:22.064191+00:00",
+      "bytes": 1091383,
+      "sha256": "4851a907344a1d2708794f8033f49c01f4afc1d4bb93055e5fcbbf3ed136045c"
+    },
+    {
+      "source": "/var/log/audit/audit.log",
+      "collection_start": "2026-11-06T11:14:22.086217+00:00",
+      "collection_end": "2026-11-06T11:14:22.089549+00:00",
+      "bytes": 299268,
+      "sha256": "5949ea9f0069bba710a63898ad01192b531dc984f96195fa553318930b877ab5"
+    },
+    {
+      "source": "/var/log/kubernetes/audit/audit.log",
+      "collection_start": "2026-11-06T11:14:22.094376+00:00",
+      "collection_end": "2026-11-06T11:14:22.460517+00:00",
+      "bytes": 53823345,
+      "sha256": "007d679feb7aa20e4c34d03ecffc673cfa562c5ea701fee79984bd8ed6cbf2be"
+    }
+  ]
+}

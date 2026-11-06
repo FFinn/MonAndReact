@@ -1,0 +1,373 @@
+{
+  "took": 34,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 4571,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "verbs": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "get",
+          "doc_count": 1899
+        },
+        {
+          "key": "update",
+          "doc_count": 1471
+        },
+        {
+          "key": "watch",
+          "doc_count": 950
+        },
+        {
+          "key": "create",
+          "doc_count": 190
+        },
+        {
+          "key": "delete",
+          "doc_count": 39
+        },
+        {
+          "key": "list",
+          "doc_count": 13
+        },
+        {
+          "key": "patch",
+          "doc_count": 9
+        }
+      ]
+    },
+    "resources": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 224,
+      "buckets": [
+        {
+          "key": "leases",
+          "doc_count": 1792
+        },
+        {
+          "key": "subjectaccessreviews",
+          "doc_count": 183
+        },
+        {
+          "key": "endpoints",
+          "doc_count": 127
+        },
+        {
+          "key": "endpointslices",
+          "doc_count": 106
+        },
+        {
+          "key": "configmaps",
+          "doc_count": 104
+        },
+        {
+          "key": "clusterinformations",
+          "doc_count": 101
+        },
+        {
+          "key": "services",
+          "doc_count": 67
+        },
+        {
+          "key": "clusterrolebindings",
+          "doc_count": 54
+        },
+        {
+          "key": "namespaces",
+          "doc_count": 41
+        },
+        {
+          "key": "pods",
+          "doc_count": 40
+        },
+        {
+          "key": "clusterroles",
+          "doc_count": 36
+        },
+        {
+          "key": "nodes",
+          "doc_count": 33
+        },
+        {
+          "key": "secrets",
+          "doc_count": 33
+        },
+        {
+          "key": "serviceaccounts",
+          "doc_count": 31
+        },
+        {
+          "key": "daemonsets",
+          "doc_count": 29
+        },
+        {
+          "key": "deployments",
+          "doc_count": 27
+        },
+        {
+          "key": "csidrivers",
+          "doc_count": 21
+        },
+        {
+          "key": "storageclasses",
+          "doc_count": 20
+        },
+        {
+          "key": "rolebindings",
+          "doc_count": 18
+        },
+        {
+          "key": "apiservices",
+          "doc_count": 16
+        },
+        {
+          "key": "bgpconfigurations",
+          "doc_count": 16
+        },
+        {
+          "key": "felixconfigurations",
+          "doc_count": 16
+        },
+        {
+          "key": "kubecontrollersconfigurations",
+          "doc_count": 16
+        },
+        {
+          "key": "networkpolicies",
+          "doc_count": 16
+        },
+        {
+          "key": "persistentvolumes",
+          "doc_count": 16
+        },
+        {
+          "key": "poddisruptionbudgets",
+          "doc_count": 15
+        },
+        {
+          "key": "hostendpoints",
+          "doc_count": 14
+        },
+        {
+          "key": "installations",
+          "doc_count": 14
+        },
+        {
+          "key": "mutatingwebhookconfigurations",
+          "doc_count": 14
+        },
+        {
+          "key": "validatingwebhookconfigurations",
+          "doc_count": 14
+        },
+        {
+          "key": "bgppeers",
+          "doc_count": 12
+        },
+        {
+          "key": "blockaffinities",
+          "doc_count": 12
+        },
+        {
+          "key": "caliconodestatuses",
+          "doc_count": 12
+        },
+        {
+          "key": "globalnetworksets",
+          "doc_count": 12
+        },
+        {
+          "key": "ipreservations",
+          "doc_count": 12
+        },
+        {
+          "key": "networksets",
+          "doc_count": 12
+        },
+        {
+          "key": "roles",
+          "doc_count": 12
+        },
+        {
+          "key": "runtimeclasses",
+          "doc_count": 12
+        },
+        {
+          "key": "resourcequotas",
+          "doc_count": 11
+        },
+        {
+          "key": "persistentvolumeclaims",
+          "doc_count": 10
+        }
+      ]
+    },
+    "users": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "system:serviceaccount:tigera-operator:tigera-operator",
+          "doc_count": 1056
+        },
+        {
+          "key": "system:anonymous",
+          "doc_count": 988
+        },
+        {
+          "key": "system:kube-controller-manager",
+          "doc_count": 779
+        },
+        {
+          "key": "system:kube-scheduler",
+          "doc_count": 470
+        },
+        {
+          "key": "system:apiserver",
+          "doc_count": 422
+        },
+        {
+          "key": "system:serviceaccount:calico-apiserver:calico-apiserver",
+          "doc_count": 279
+        },
+        {
+          "key": "system:serviceaccount:calico-system:calico-kube-controllers",
+          "doc_count": 188
+        },
+        {
+          "key": "system:node:fhm9do9pul5klkohia9h",
+          "doc_count": 128
+        },
+        {
+          "key": "system:serviceaccount:kube-system:generic-garbage-collector",
+          "doc_count": 60
+        },
+        {
+          "key": "system:serviceaccount:kube-system:resourcequota-controller",
+          "doc_count": 60
+        },
+        {
+          "key": "system:serviceaccount:kube-system:metrics-server",
+          "doc_count": 55
+        },
+        {
+          "key": "system:serviceaccount:kube-system:coredns",
+          "doc_count": 31
+        },
+        {
+          "key": "system:serviceaccount:calico-system:calico-typha",
+          "doc_count": 29
+        },
+        {
+          "key": "system:serviceaccount:kube-system:kube-proxy",
+          "doc_count": 14
+        },
+        {
+          "key": "system:serviceaccount:local-path-storage:local-path-provisioner-service-account",
+          "doc_count": 10
+        },
+        {
+          "key": "kubernetes-admin",
+          "doc_count": 1
+        },
+        {
+          "key": "system:serviceaccount:kube-system:daemon-set-controller",
+          "doc_count": 1
+        }
+      ]
+    },
+    "timeline": {
+      "buckets": [
+        {
+          "key_as_string": "2026-11-06T10:53:00.000Z",
+          "key": 1793962380000,
+          "doc_count": 309
+        },
+        {
+          "key_as_string": "2026-11-06T10:54:00.000Z",
+          "key": 1793962440000,
+          "doc_count": 326
+        },
+        {
+          "key_as_string": "2026-11-06T10:55:00.000Z",
+          "key": 1793962500000,
+          "doc_count": 323
+        },
+        {
+          "key_as_string": "2026-11-06T10:56:00.000Z",
+          "key": 1793962560000,
+          "doc_count": 342
+        },
+        {
+          "key_as_string": "2026-11-06T10:57:00.000Z",
+          "key": 1793962620000,
+          "doc_count": 325
+        },
+        {
+          "key_as_string": "2026-11-06T10:58:00.000Z",
+          "key": 1793962680000,
+          "doc_count": 341
+        },
+        {
+          "key_as_string": "2026-11-06T10:59:00.000Z",
+          "key": 1793962740000,
+          "doc_count": 290
+        },
+        {
+          "key_as_string": "2026-11-06T11:00:00.000Z",
+          "key": 1793962800000,
+          "doc_count": 311
+        },
+        {
+          "key_as_string": "2026-11-06T11:01:00.000Z",
+          "key": 1793962860000,
+          "doc_count": 263
+        },
+        {
+          "key_as_string": "2026-11-06T11:02:00.000Z",
+          "key": 1793962920000,
+          "doc_count": 261
+        },
+        {
+          "key_as_string": "2026-11-06T11:03:00.000Z",
+          "key": 1793962980000,
+          "doc_count": 336
+        },
+        {
+          "key_as_string": "2026-11-06T11:04:00.000Z",
+          "key": 1793963040000,
+          "doc_count": 323
+        },
+        {
+          "key_as_string": "2026-11-06T11:05:00.000Z",
+          "key": 1793963100000,
+          "doc_count": 279
+        },
+        {
+          "key_as_string": "2026-11-06T11:06:00.000Z",
+          "key": 1793963160000,
+          "doc_count": 273
+        },
+        {
+          "key_as_string": "2026-11-06T11:07:00.000Z",
+          "key": 1793963220000,
+          "doc_count": 269
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "J0CMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107323400+00:00",
+    "event_time": "2026-11-06T11:08:13.683100447Z",
+    "log": "2026-11-06T11:08:13.683100447Z stdout F [INFO] Metrics collector starting...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "LECMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107336918+00:00",
+    "event_time": "2026-11-06T11:08:14.97852534Z",
+    "log": "2026-11-06T11:08:14.97852534Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "LUCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107338571+00:00",
+    "event_time": "2026-11-06T11:08:14.980161878Z",
+    "log": "2026-11-06T11:08:14.980161878Z stdout F stress-ng: info:  [10] setting to a infinite run per stressor",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "LkCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107340359+00:00",
+    "event_time": "2026-11-06T11:08:14.985235934Z",
+    "log": "2026-11-06T11:08:14.985235934Z stdout F stress-ng: info:  [10] dispatching hogs: 2 cpu",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "L0CMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107341924+00:00",
+    "event_time": "2026-11-06T11:08:14.985288245Z",
+    "log": "2026-11-06T11:08:14.985288245Z stdout F stress-ng: info:  [10] note: system has only 258 MB of free memory and swap, recommend using --oom-avoid",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "MECMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107344099+00:00",
+    "event_time": "2026-11-06T11:08:14.98703929Z",
+    "log": "2026-11-06T11:08:14.98703929Z stdout F stress-ng: info:  [13] cpu: for stable load results, select a specific cpu stress method with --cpu-method other than 'all'",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "MUCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107345786+00:00",
+    "event_time": "2026-11-06T11:08:14.987060983Z",
+    "log": "2026-11-06T11:08:14.987060983Z stdout F stress-ng: info:  [14] cpu: for stable load results, select a specific cpu stress method with --cpu-method other than 'all'",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "PUCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107364516+00:00",
+    "event_time": "2026-11-06T11:08:15.229137364Z",
+    "log": "2026-11-06T11:08:15.229137364Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "SUCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107383723+00:00",
+    "event_time": "2026-11-06T11:08:45.231527931Z",
+    "log": "2026-11-06T11:08:45.231527931Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "VUCMsKEBq35JGyd5RiPG",
+    "ingested_at": "2026-11-06T11:08:59.107403266+00:00",
+    "event_time": "2026-11-06T11:08:45.483315592Z",
+    "log": "2026-11-06T11:08:45.483315592Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "IUCMsKEBq35JGyd5gSSy",
+    "ingested_at": "2026-11-06T11:09:15.485690945+00:00",
+    "event_time": "2026-11-06T11:09:15.485594672Z",
+    "log": "2026-11-06T11:09:15.485594672Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "LUCMsKEBq35JGyd5gSSy",
+    "ingested_at": "2026-11-06T11:09:15.739709653+00:00",
+    "event_time": "2026-11-06T11:09:15.739565173Z",
+    "log": "2026-11-06T11:09:15.739565173Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "DUCMsKEBq35JGyd59iX5",
+    "ingested_at": "2026-11-06T11:09:45.741678740+00:00",
+    "event_time": "2026-11-06T11:09:45.741582423Z",
+    "log": "2026-11-06T11:09:45.741582423Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "G0CMsKEBq35JGyd59iX5",
+    "ingested_at": "2026-11-06T11:09:45.996156155+00:00",
+    "event_time": "2026-11-06T11:09:45.996075277Z",
+    "log": "2026-11-06T11:09:45.996075277Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "MECNsKEBq35JGyd5cyfH",
+    "ingested_at": "2026-11-06T11:10:15.998408447+00:00",
+    "event_time": "2026-11-06T11:10:15.998324521Z",
+    "log": "2026-11-06T11:10:15.998324521Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "PECNsKEBq35JGyd5cyfH",
+    "ingested_at": "2026-11-06T11:10:16.557780890+00:00",
+    "event_time": "2026-11-06T11:10:16.557730246Z",
+    "log": "2026-11-06T11:10:16.557730246Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "w0CNsKEBq35JGyd54iiY",
+    "ingested_at": "2026-11-06T11:10:46.560152009+00:00",
+    "event_time": "2026-11-06T11:10:46.560072074Z",
+    "log": "2026-11-06T11:10:46.560072074Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "z0CNsKEBq35JGyd54iiY",
+    "ingested_at": "2026-11-06T11:10:46.811048140+00:00",
+    "event_time": "2026-11-06T11:10:46.810919179Z",
+    "log": "2026-11-06T11:10:46.810919179Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "70COsKEBq35JGyd5Ving",
+    "ingested_at": "2026-11-06T11:11:16.813088232+00:00",
+    "event_time": "2026-11-06T11:11:16.813002496Z",
+    "log": "2026-11-06T11:11:16.813002496Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "BkCOsKEBq35JGyd5Virg",
+    "ingested_at": "2026-11-06T11:11:17.060197104+00:00",
+    "event_time": "2026-11-06T11:11:17.060137672Z",
+    "log": "2026-11-06T11:11:17.060137672Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "LUCOsKEBq35JGyd5zCuo",
+    "ingested_at": "2026-11-06T11:11:47.062421027+00:00",
+    "event_time": "2026-11-06T11:11:47.062340086Z",
+    "log": "2026-11-06T11:11:47.062340086Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "OUCOsKEBq35JGyd5zCuo",
+    "ingested_at": "2026-11-06T11:11:47.389616157+00:00",
+    "event_time": "2026-11-06T11:11:47.389477147Z",
+    "log": "2026-11-06T11:11:47.389477147Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "DUCPsKEBq35JGyd5QCz0",
+    "ingested_at": "2026-11-06T11:12:17.391933332+00:00",
+    "event_time": "2026-11-06T11:12:17.391853343Z",
+    "log": "2026-11-06T11:12:17.391853343Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "GUCPsKEBq35JGyd5QCz0",
+    "ingested_at": "2026-11-06T11:12:17.636267867+00:00",
+    "event_time": "2026-11-06T11:12:17.636197132Z",
+    "log": "2026-11-06T11:12:17.636197132Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "VUCPsKEBq35JGyd5ti1G",
+    "ingested_at": "2026-11-06T11:12:47.638696466+00:00",
+    "event_time": "2026-11-06T11:12:47.638605923Z",
+    "log": "2026-11-06T11:12:47.638605923Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "YUCPsKEBq35JGyd5ti1G",
+    "ingested_at": "2026-11-06T11:12:47.882673015+00:00",
+    "event_time": "2026-11-06T11:12:47.882531855Z",
+    "log": "2026-11-06T11:12:47.882531855Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "qkCQsKEBq35JGyd5LS4x",
+    "ingested_at": "2026-11-06T11:13:17.884714155+00:00",
+    "event_time": "2026-11-06T11:13:17.884632328Z",
+    "log": "2026-11-06T11:13:17.884632328Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "tkCQsKEBq35JGyd5LS4x",
+    "ingested_at": "2026-11-06T11:13:18.213790797+00:00",
+    "event_time": "2026-11-06T11:13:18.213729605Z",
+    "log": "2026-11-06T11:13:18.213729605Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "1kCQsKEBq35JGyd5oS_Y",
+    "ingested_at": "2026-11-06T11:13:48.216355170+00:00",
+    "event_time": "2026-11-06T11:13:48.21629334Z",
+    "log": "2026-11-06T11:13:48.21629334Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "5UCQsKEBq35JGyd5oS_Y",
+    "ingested_at": "2026-11-06T11:13:48.535394178+00:00",
+    "event_time": "2026-11-06T11:13:48.53526434Z",
+    "log": "2026-11-06T11:13:48.53526434Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "OUCRsKEBq35JGyd5FTGv",
+    "ingested_at": "2026-11-06T11:14:18.537551912+00:00",
+    "event_time": "2026-11-06T11:14:18.537461334Z",
+    "log": "2026-11-06T11:14:18.537461334Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "RUCRsKEBq35JGyd5FTGv",
+    "ingested_at": "2026-11-06T11:14:18.781043074+00:00",
+    "event_time": "2026-11-06T11:14:18.780961651Z",
+    "log": "2026-11-06T11:14:18.780961651Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "u0CRsKEBq35JGyd5jzIG",
+    "ingested_at": "2026-11-06T11:14:48.784545544+00:00",
+    "event_time": "2026-11-06T11:14:48.784483259Z",
+    "log": "2026-11-06T11:14:48.784483259Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "x0CRsKEBq35JGyd5nTJ0",
+    "ingested_at": "2026-11-06T11:14:49.111904575+00:00",
+    "event_time": "2026-11-06T11:14:49.111850063Z",
+    "log": "2026-11-06T11:14:49.111850063Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "zUCSsKEBq35JGyd5FDTz",
+    "ingested_at": "2026-11-06T11:15:19.113984095+00:00",
+    "event_time": "2026-11-06T11:15:19.113944305Z",
+    "log": "2026-11-06T11:15:19.113944305Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "2UCSsKEBq35JGyd5FDTz",
+    "ingested_at": "2026-11-06T11:15:19.439134026+00:00",
+    "event_time": "2026-11-06T11:15:19.438984282Z",
+    "log": "2026-11-06T11:15:19.438984282Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "3UCSsKEBq35JGyd5ijWd",
+    "ingested_at": "2026-11-06T11:15:49.441624193+00:00",
+    "event_time": "2026-11-06T11:15:49.441540287Z",
+    "log": "2026-11-06T11:15:49.441540287Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "6UCSsKEBq35JGyd5ijWd",
+    "ingested_at": "2026-11-06T11:15:49.697418935+00:00",
+    "event_time": "2026-11-06T11:15:49.697357402Z",
+    "log": "2026-11-06T11:15:49.697357402Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "ukCSsKEBq35JGyd5_zbf",
+    "ingested_at": "2026-11-06T11:16:19.699592968+00:00",
+    "event_time": "2026-11-06T11:16:19.699519066Z",
+    "log": "2026-11-06T11:16:19.699519066Z stdout F [DEBUG] Sending to remote endpoint...",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  },
+  {
+    "index": "k8s-pods-2026.11.06",
+    "document_id": "xkCSsKEBq35JGyd5_zbf",
+    "ingested_at": "2026-11-06T11:16:19.949293123+00:00",
+    "event_time": "2026-11-06T11:16:19.949231416Z",
+    "log": "2026-11-06T11:16:19.949231416Z stdout F   \"url\": \"http://httpbin.org/post\",",
+    "tag": "k8s.pods.var.log.containers.metrics-collector_monitoring-system_collector-1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6.log"
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "auditID": "2993781b-f5a8-44d5-825e-26d11b1aa2d9",
+    "stageTimestamp": "2026-11-06T11:08:01.723654Z",
+    "verb": "create",
+    "requestURI": "/apis/authorization.k8s.io/v1/selfsubjectrulesreviews",
+    "objectRef": {
+      "resource": "selfsubjectrulesreviews",
+      "apiGroup": "authorization.k8s.io",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    }
+  },
+  {
+    "auditID": "5cadc193-8461-49dc-a2c5-3d480110381d",
+    "stageTimestamp": "2026-11-06T11:08:02.800411Z",
+    "verb": "list",
+    "requestURI": "/api/v1/namespaces?limit=500",
+    "objectRef": {
+      "resource": "namespaces",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "2c561636-6904-4017-8a59-a2919bd213f8",
+    "stageTimestamp": "2026-11-06T11:08:04.137023Z",
+    "verb": "list",
+    "requestURI": "/api/v1/resourcequotas?limit=500",
+    "objectRef": {
+      "resource": "resourcequotas",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "f2064347-2325-49d9-bd36-7b4fb37d4bbf",
+    "stageTimestamp": "2026-11-06T11:08:05.226155Z",
+    "verb": "create",
+    "requestURI": "/api/v1/namespaces?fieldManager=kubectl-create&fieldValidation=Strict",
+    "objectRef": {
+      "resource": "namespaces",
+      "name": "monitoring-system",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    }
+  },
+  {
+    "auditID": "b503c71a-4bde-4795-82e3-55b287ef864f",
+    "stageTimestamp": "2026-11-06T11:08:08.066820Z",
+    "verb": "get",
+    "requestURI": "/openapi/v3?timeout=32s",
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "1cfd68ed-01ce-4526-95e8-56476a671753",
+    "stageTimestamp": "2026-11-06T11:08:08.135284Z",
+    "verb": "get",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods/metrics-collector",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "status": "Failure",
+      "message": "pods \"metrics-collector\" not found",
+      "reason": "NotFound",
+      "details": {
+        "name": "metrics-collector",
+        "kind": "pods"
+      },
+      "code": 404
+    }
+  },
+  {
+    "auditID": "2e05e24d-aab0-4cc3-aabe-48a943133174",
+    "stageTimestamp": "2026-11-06T11:08:08.137324Z",
+    "verb": "get",
+    "requestURI": "/api/v1/namespaces/monitoring-system",
+    "objectRef": {
+      "resource": "namespaces",
+      "namespace": "monitoring-system",
+      "name": "monitoring-system",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "d2f4227c-76d4-440b-84ca-3374607f23c8",
+    "stageTimestamp": "2026-11-06T11:08:08.146652Z",
+    "verb": "create",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    }
+  },
+  {
+    "auditID": "a88af7e3-bb10-495e-8350-765601edfb57",
+    "stageTimestamp": "2026-11-06T11:08:10.209996Z",
+    "verb": "get",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods/metrics-collector",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "b76d52c8-220f-4b47-aefa-f4da37614f1d",
+    "stageTimestamp": "2026-11-06T11:08:10.212564Z",
+    "verb": "list",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods?fieldSelector=metadata.name%3Dmetrics-collector&limit=500&resourceVersion=0",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "2c31f9cb-9d23-46e3-a0c1-efeea837d4c4",
+    "stageTimestamp": "2026-11-06T11:08:13.998350Z",
+    "verb": "watch",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods?allowWatchBookmarks=true&fieldSelector=metadata.name%3Dmetrics-collector&resourceVersion=2950&timeoutSeconds=484&watch=true",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "611ebc70-8f2f-4a11-a13e-cd07610e96e9",
+    "stageTimestamp": "2026-11-06T11:08:15.390187Z",
+    "verb": "get",
+    "requestURI": "/openapi/v3?timeout=32s",
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "efde6282-d599-4688-bada-bb5569b8f6a4",
+    "stageTimestamp": "2026-11-06T11:08:15.502030Z",
+    "verb": "get",
+    "requestURI": "/openapi/v3/apis/batch/v1?hash=19EA9C2602C94BCB7C79B04B45AA95B61E2147F8613CB04A15B72CF24C112AA6D2F27E41786A78293B2EF39B9E5B1602E0EB437575CE4B05BE96D64681FE9B9F&timeout=32s",
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "1b325399-1ffc-4414-b04e-8fef0564a7f5",
+    "stageTimestamp": "2026-11-06T11:08:16.022737Z",
+    "verb": "get",
+    "requestURI": "/apis/batch/v1/namespaces/monitoring-system/cronjobs/metrics-maintenance",
+    "objectRef": {
+      "resource": "cronjobs",
+      "namespace": "monitoring-system",
+      "name": "metrics-maintenance",
+      "apiGroup": "batch",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "status": "Failure",
+      "message": "cronjobs.batch \"metrics-maintenance\" not found",
+      "reason": "NotFound",
+      "details": {
+        "name": "metrics-maintenance",
+        "group": "batch",
+        "kind": "cronjobs"
+      },
+      "code": 404
+    }
+  },
+  {
+    "auditID": "9f82867a-984e-433e-8989-04e258f9c35e",
+    "stageTimestamp": "2026-11-06T11:08:16.033027Z",
+    "verb": "get",
+    "requestURI": "/api/v1/namespaces/monitoring-system",
+    "objectRef": {
+      "resource": "namespaces",
+      "namespace": "monitoring-system",
+      "name": "monitoring-system",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    }
+  },
+  {
+    "auditID": "d99bbe32-128e-4f23-b241-0208e85ae7ad",
+    "stageTimestamp": "2026-11-06T11:08:17.023050Z",
+    "verb": "create",
+    "requestURI": "/apis/batch/v1/namespaces/monitoring-system/cronjobs?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "objectRef": {
+      "resource": "cronjobs",
+      "namespace": "monitoring-system",
+      "name": "metrics-maintenance",
+      "apiGroup": "batch",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    }
+  }
+]

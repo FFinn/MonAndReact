@@ -1,0 +1,30 @@
+[
+  {
+    "id": "suspicious-create",
+    "title": "DSO11 — Suspicious resource creation",
+    "data_view": "k8s-audit-*",
+    "kql": "user.username: \"kubernetes-admin\" AND verb: create AND objectRef.resource: (namespaces OR pods OR cronjobs)",
+    "url": "http://127.0.0.1:15611/app/discover#/view/dso11-suspicious-create"
+  },
+  {
+    "id": "namespace-pivot",
+    "title": "DSO11 — Namespace and identity pivot",
+    "data_view": "k8s-audit-*",
+    "kql": "objectRef.namespace: \"monitoring-system\" AND user.username: (\"kubernetes-admin\" OR \"system:serviceaccount:monitoring-system:default\")",
+    "url": "http://127.0.0.1:15611/app/discover#/view/dso11-namespace-pivot"
+  },
+  {
+    "id": "pod-indicators",
+    "title": "DSO11 — Container CPU and HTTP evidence",
+    "data_view": "k8s-pods-*",
+    "kql": "tag.keyword: k8s.pods.var.log.containers.metrics-collector_monitoring-system_* AND (log: \"stress-ng\" OR log: \"httpbin.org\" OR log: \"Sending to remote endpoint\")",
+    "url": "http://127.0.0.1:15611/app/discover#/view/dso11-pod-indicators"
+  },
+  {
+    "id": "cron-denied",
+    "title": "DSO11 — Scheduled workload denied access",
+    "data_view": "k8s-audit-*",
+    "kql": "user.username: \"system:serviceaccount:monitoring-system:default\" AND responseStatus.code: 403",
+    "url": "http://127.0.0.1:15611/app/discover#/view/dso11-cron-denied"
+  }
+]

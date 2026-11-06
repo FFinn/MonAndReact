@@ -1,0 +1,14 @@
+{
+  "source": "/var/log/auth.log captured 2026-11-06T11:14:22Z",
+  "authentication_lines": [
+    "Nov  6 10:53:06 fhm9do9pul5klkohia9h sshd[10142]: Accepted publickey for all-infa-probe from 10.91.0.4 port 52830 ssh2: ED25519 SHA256:cqlPzqfzkROg6HetAh8jlK7ukb0tK0vVLut7tIMg/yU",
+    "Nov  6 11:13:00 fhm9do9pul5klkohia9h sshd[81133]: Accepted publickey for ubuntu from 10.91.0.4 port 44634 ssh2: ED25519 SHA256:fadJ+mx5B0GCMGSSsnfNsdsvYwxdtWA4/FPXjcOcqhI"
+  ],
+  "failed_password_lines_in_capture": 0,
+  "accepted_password_lines_in_capture": 0,
+  "linux_audit_index_at_review": {
+    "documents": 501,
+    "latest_event_utc": "2026-11-06T10:56:54Z",
+    "coverage_note": "Before incident; no execve audit coverage established. auditctl output in security-controls.txt."
+  }
+}

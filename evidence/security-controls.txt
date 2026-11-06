@@ -1,0 +1,38 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2026-11-06T11:08:05Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "monitoring-system"
+        },
+        "name": "monitoring-system",
+        "resourceVersion": "2935",
+        "uid": "c7e48273-0ea9-47e8-9ee7-7648edb0221c"
+    },
+    "spec": {
+        "finalizers": [
+            "kubernetes"
+        ]
+    },
+    "status": {
+        "phase": "Active"
+    }
+}
+{
+    "apiVersion": "v1",
+    "items": [],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
+{
+    "apiVersion": "v1",
+    "items": [],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
+No rules

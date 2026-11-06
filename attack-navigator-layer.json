@@ -1,0 +1,54 @@
+{
+  "name": "DSO-11: metrics-collector investigation",
+  "versions": {
+    "attack": "18",
+    "navigator": "5.2.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Observed lab behavior, not automated detection coverage. No proven SSH brute force, miner, host escape, sensitive-data exfiltration or functional pod recreation.",
+  "filters": {
+    "platforms": [
+      "Linux",
+      "Containers"
+    ]
+  },
+  "layout": {
+    "layout": "side",
+    "showName": true,
+    "showID": true,
+    "expandedSubtechniques": "annotated"
+  },
+  "legendItems": [
+    {
+      "label": "Observed behavior with evidence",
+      "color": "#8ec843"
+    },
+    {
+      "label": "Scheduled execution confirmed; persistence limited",
+      "color": "#ffe766"
+    }
+  ],
+  "techniques": [
+    {
+      "techniqueID": "T1610",
+      "color": "#8ec843",
+      "comment": "Pod metrics-collector created by kubernetes-admin, auditID d2f4227c-76d4-440b-84ca-3374607f23c8, 201; alpine:latest with stress-ng shell payload. Pod is not privileged."
+    },
+    {
+      "techniqueID": "T1059.004",
+      "color": "#8ec843",
+      "comment": "Live pod manifest and ps show /bin/sh -c running apk, stress-ng and a curl loop. Container startup execution, not attacker kubectl exec."
+    },
+    {
+      "techniqueID": "T1036",
+      "color": "#8ec843",
+      "comment": "metrics-collector name, Prometheus metrics aggregation description and platform-team maintainer conflict with observed CPU stress workload. Behavioral masquerading; identity of the human operator unknown."
+    },
+    {
+      "techniqueID": "T1053.007",
+      "color": "#ffe766",
+      "comment": "metrics-maintenance CronJob */5 * * * * creates Jobs. Code only checks pod and echoes recovery text. Default SA receives 403. Scheduled execution confirmed, autonomous recreation of collector is not implemented."
+    }
+  ]
+}

