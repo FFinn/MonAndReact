@@ -36,22 +36,24 @@ SRE сообщил о нагрузке около 80% в 02:00–05:00. **Это
 
 ## 3. Timeline
 
+Повторная проверка: все 12 временных меток совпали с сохранёнными доказательствами; порядок проверен без потери наносекунд. [Машиночитаемый timeline с точными источниками](evidence/timeline-verified.json).
+
 Для Kubernetes используется точный `stageTimestamp` стадии `ResponseComplete` из оригинального audit-файла. Для stdout/stderr — CRI timestamp внутри `log`, а не время доставки в ES. Полные auditID и записи находятся в [audit-events.json](evidence/audit-events.json), ID документов ES — в [pod-log-excerpts.json](evidence/pod-log-excerpts.json).
 
 | Время UTC, 2026-11-06 | Событие и интерпретация | Источник / идентификатор |
 |---|---|---|
-| 11:08:01.723654 | `kubernetes-admin` проверяет разрешения через `selfsubjectrulesreviews`, ответ 201. Начало наблюдаемой разведки; первичный доступ произошёл ранее или вне доступных данных. | raw k8s audit, `stageTimestamp`, auditID `2993781b-f5a8-44d5-825e-26d11b1aa2d9` |
-| 11:08:02.800411 | Список namespaces, ответ 200. | raw k8s audit, auditID `5cadc193-8461-49dc-a2c5-3d480110381d` |
-| 11:08:04.137023 | Список ResourceQuota, ответ 200. | raw k8s audit, auditID `2c561636-6904-4017-8a59-a2919bd213f8` |
-| 11:08:05.226155 | Создан namespace `monitoring-system`, ответ 201. | raw audit + `k8s-audit-2026.11.06`, auditID `f2064347-2325-49d9-bd36-7b4fb37d4bbf` |
-| 11:08:08.146652 | Создан под `metrics-collector`, ответ 201; shell-команда содержит `stress-ng` и HTTP POST. | raw audit, auditID `d2f4227c-76d4-440b-84ca-3374607f23c8`; в SIEM найдена только стадия RequestReceived этого создания |
+| 11:08:01.723654 | `kubernetes-admin` проверяет разрешения через `selfsubjectrulesreviews`, ответ 201. Начало наблюдаемой разведки; первичный доступ произошёл ранее или вне доступных данных. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp`, auditID `2993781b-f5a8-44d5-825e-26d11b1aa2d9` |
+| 11:08:02.800411 | Список namespaces, ответ 200. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp`, auditID `5cadc193-8461-49dc-a2c5-3d480110381d` |
+| 11:08:04.137023 | Список ResourceQuota, ответ 200. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp`, auditID `2c561636-6904-4017-8a59-a2919bd213f8` |
+| 11:08:05.226155 | Создан namespace `monitoring-system`, ответ 201. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp` + `k8s-audit-2026.11.06`, auditID `f2064347-2325-49d9-bd36-7b4fb37d4bbf` |
+| 11:08:08.146652 | Создан под `metrics-collector`, ответ 201; shell-команда содержит `stress-ng` и HTTP POST. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp`, auditID `d2f4227c-76d4-440b-84ca-3374607f23c8`; в SIEM найдена только стадия RequestReceived этого создания |
 | 11:08:13.683100447 | Контейнер пишет «Metrics collector starting…». | `k8s-pods-2026.11.06`, `log`; документ `J0CMsKEBq35JGyd5RiPG` |
 | 11:08:14.985235934 | `stress-ng` сообщает «dispatching hogs: 2 cpu». Фактический запуск CPU-нагрузки. | `k8s-pods-2026.11.06`, `log`; документ `LkCMsKEBq35JGyd5RiPG` |
 | 11:08:15.229137364 | Ответ внешнего сервиса содержит URL `http://httpbin.org/post`; отправляется демонстрационный JSON метрик. | `k8s-pods-2026.11.06`, CRI timestamp в `log`; документ `PUCMsKEBq35JGyd5RiPG` |
-| 11:08:17.023050 | Создан CronJob `metrics-maintenance`, расписание `*/5 * * * *`, ответ 201. | raw audit + `k8s-audit-2026.11.06`, auditID `d99bbe32-128e-4f23-b241-0208e85ae7ad` |
-| 11:10:01.081774 | Контроллер CronJob создаёт Job `metrics-maintenance-29899390`, ответ 201. Это автоматическое продолжение расписания. | raw k8s audit, auditID `aa15b601-d12a-49a0-9dda-d732c9c5d2bd` |
-| 11:10:11.723360 | SA `system:serviceaccount:monitoring-system:default` пытается прочитать `metrics-collector` и получает **403 Forbidden**. | raw audit + `k8s-audit-2026.11.06`, auditID `8cf205d3-a180-4319-8913-4de3bb40fd58` |
-| 11:10:11.729579655 | Job печатает «Recovery workflow initiated». Это `echo`, а не успешное восстановление. | `kubectl logs` с timestamps, runtime-check.txt |
+| 11:08:17.023050 | Создан CronJob `metrics-maintenance`, расписание `*/5 * * * *`, ответ 201. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp` + `k8s-audit-2026.11.06`, auditID `d99bbe32-128e-4f23-b241-0208e85ae7ad` |
+| 11:10:01.081774 | Контроллер CronJob создаёт Job `metrics-maintenance-29899390`, ответ 201. Это автоматическое продолжение расписания. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp`, auditID `aa15b601-d12a-49a0-9dda-d732c9c5d2bd` |
+| 11:10:11.723360 | SA `system:serviceaccount:monitoring-system:default` пытается прочитать `metrics-collector` и получает **403 Forbidden**. | `/var/log/kubernetes/audit/audit.log`, `stageTimestamp` + `k8s-audit-2026.11.06`, auditID `8cf205d3-a180-4319-8913-4de3bb40fd58` |
+| 11:10:11.729579655 | Job печатает «Recovery workflow initiated». Это `echo`, а не успешное восстановление. | `kubectl logs --timestamps`, под `metrics-maintenance-29899390-bmb4p`, начальная временная метка строки; `evidence/runtime-check.txt:175` |
 
 Отдельная линия расследования: SSH исследователя в 11:13:00; снимок процессов/метрик в 11:14:46; копирование журналов в 11:14:21–11:14:22 UTC. Время получения сообщения SRE неизвестно, поэтому MTTD/MTTR не вычислялись.
 
@@ -118,8 +120,8 @@ SRE сообщил о нагрузке около 80% в 02:00–05:00. **Это
 | Техника | Конкретное событие | Обоснование и предел вывода |
 |---|---|---|
 | [T1610 — Deploy Container](https://attack.mitre.org/techniques/T1610/) | Создание `metrics-collector`, auditID `d2f4227c-76d4-440b-84ca-3374607f23c8`, код 201 | Через API развёрнут контейнер с нагрузочным shell payload. Привилегированный режим или escape для этой техники не требуются и здесь не установлены. |
-| [T1059.004 — Unix Shell](https://attack.mitre.org/techniques/T1059/004/) | `/bin/sh -c` в spec и процессах: `apk`, `stress-ng`, цикл `curl` | Shell исполняет команды внутри контейнера при старте. Это не `kubectl exec` атакующего; поздний exec выполнен расследователем. |
-| [T1036 — Masquerading](https://attack.mitre.org/techniques/T1036/) | Название `metrics-collector`, описание `Prometheus metrics aggregation service`, maintainer `platform-team` при CPU stress и фиктивном POST | Наблюдаемое несоответствие назначения маскирует нагрузку под инфраструктурный сервис. Аннотация не подтверждает реальное авторство platform-team. |
+| [T1059.004 — Unix Shell](https://attack.mitre.org/techniques/T1059/004/) | Создание пода в 11:08:08.146652 UTC, auditID `d2f4227c-76d4-440b-84ca-3374607f23c8`, `requestObject.spec.containers[].command`: `/bin/sh -c`, `apk`, `stress-ng`, цикл `curl`; запуск подтверждён stdout в 11:08:14.985235934 | Shell исполняет команды внутри контейнера при старте. Это не `kubectl exec` атакующего; поздний exec выполнен расследователем. |
+| [T1036 — Masquerading](https://attack.mitre.org/techniques/T1036/) | Создание того же пода в 11:08:08.146652 UTC (auditID `d2f4227c-76d4-440b-84ca-3374607f23c8`); `metadata.annotations.description/maintainer` в `resources.json`: `Prometheus metrics aggregation service` / `platform-team`, сопоставленные со stdout stress-ng в 11:08:14.985235934 | Наблюдаемое несоответствие назначения маскирует нагрузку под инфраструктурный сервис. Аннотация не подтверждает реальное авторство platform-team. |
 | [T1053.007 — Container Orchestration Job](https://attack.mitre.org/techniques/T1053/007/) | CronJob `metrics-maintenance` → Job в 11:10; auditID `d99bbe32-128e-4f23-b241-0208e85ae7ad` и `aa15b601-d12a-49a0-9dda-d732c9c5d2bd` | Планировщик обеспечивает повторное исполнение команд. Успешное восстановление основного пода или расширение привилегий не подтверждены: только echo и отказ 403. |
 
 Не добавлены T1110 (нет доказанного brute force), T1611 (нет escape), T1609 на основе наших exec-запросов, техники кражи credentials и эксфильтрации секретов. `stress-ng` сам по себе не доказывает майнинг; HTTP echo не доказывает командный C2-канал.
@@ -148,7 +150,7 @@ SRE сообщил о нагрузке около 80% в 02:00–05:00. **Это
 | A3 / High | Ввести admission-проверку одобренного registry/образа по digest для рабочих namespace, контролируемые исключения и review изменения манифеста | Не допускать непроверенный workload и mutable latest | Тестовый `alpine:latest` отклонён, одобренный digest принят; каждое исключение имеет владельца и срок | Platform security | 2026-11-09 |
 | A4 / High | Ввести default-deny egress и явный список разрешённых направлений после инвентаризации зависимостей | Ограничить несанкционированный outbound | POST на неразрешённый тестовый endpoint блокируется; DNS и нужные бизнес-соединения проходят контрольные тесты | Network/SRE | 2026-11-09 |
 | A5 / Medium | Задать ResourceQuota/LimitRange и обоснованные requests/limits; алерт на длительное потребление выше профиля приложения | Снизить влияние ресурсоёмкого workload | Квоты действуют на все рабочие namespaces; тест превышения отклоняется; нагрузка вызывает сигнал ≤5 минут | SRE | 2026-11-10 |
-| A6 / High | Внедрить правила D1–D4 ниже с дедупликацией по auditID, runbook и проверкой на baseline | Обнаруживать подозрительное создание, CPU stress и ошибки scheduled workload | Все положительные тесты обнаружены ≤5 минут; согласованные штатные деплои не эскалируются; reviewer получает namespace/user/sourceIP | SOC/DevSecOps | 2026-11-09 |
+| A6 / High | Внедрить правила D1–D4 ниже с дедупликацией audit по auditID, stdout по pod/container, runbook и проверкой на baseline | Обнаруживать подозрительное создание, CPU stress и ошибки scheduled workload | Все положительные тесты обнаружены ≤5 минут; согласованные штатные деплои не эскалируются; reviewer получает namespace/user/sourceIP | SOC/DevSecOps | 2026-11-09 |
 | A7 / High | Найти причину пропуска ResponseComplete в сборщике/индексации; парсить CRI-время отдельно от ingest, контролировать доставку | Восстановить полноту и порядок доказательств | Для 100 тестовых API-запросов все ожидаемые стадии присутствуют; CRI timestamp равен времени события; lag p95 <60 секунд | Observability engineer | 2026-11-10 |
 | A8 / Medium | Настроить аудит execve и важных операций с credentials на нодах с оценкой объёма/приватности, доставку и ретеншн | Расследовать действия ОС и initial access | Тестовая команда доступна в SIEM ≤60 секунд с host/user/process; источник не молчит >5 минут без сигнала | Linux/SRE + Security | 2026-11-13 |
 | A9 / Medium | Исправить maintenance-скрипт: различать 403/404, убрать ложный успех; отключать auto-mount токена, где API не нужен | Исключить ложную диагностику и ненужную доступность credentials | Тесты 403/404/200 дают разные результаты; нет «успеха восстановления» без проверенного действия | Владелец сервиса | 2026-11-10 |
@@ -213,6 +215,8 @@ AND user.username: ("kubernetes-admin" OR "system:serviceaccount:monitoring-syst
 В `kibana-objects.ndjson` включены Data Views, четыре поиска, четыре визуализации и dashboard. Импорт: Kibana → Stack Management → Saved Objects → Import. Это определения объектов, **не полная база Elasticsearch**; после удаления ВМ для просмотра новых результатов потребуются соответствующие данные. Скриншоты и обезличенные выборки остаются автономными доказательствами.
 
 ## 13. Самопроверка
+
+[Проверка всех 16 пунктов чек-листа с указанием доказательств](CHECKLIST.md).
 
 - [x] Подозрительная активность найдена на реальном DSO-11, причина нагрузки подтверждена процессами.
 - [x] Timeline содержит 12 точных событий с источниками и оговоркой про локальное время.

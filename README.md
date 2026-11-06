@@ -1,6 +1,6 @@
 # MonAndReact — расследование DSO-11
 
-[Полный отчёт и постмортем](REPORT.md) · [KQL-поиски](queries.json) · [ATT&CK Navigator layer](attack-navigator-layer.json)
+[Полный отчёт и постмортем](REPORT.md) · [Чек-лист: 16/16](CHECKLIST.md) · [KQL-поиски](queries.json) · [ATT&CK Navigator layer](attack-navigator-layer.json)
 
 Расследование выполнено по фактическим данным учебного стенда 6 ноября 2026 года. Обнаружены CPU stress под видом сборщика метрик, внешний тестовый POST и CronJob с неработающей логикой восстановления. Initial access не установлен; майнинг, кража секретов и container escape не доказаны.
 

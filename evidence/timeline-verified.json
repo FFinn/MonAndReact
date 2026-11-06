@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-06",
+  "timezone": "UTC",
+  "verification_scope": "8 audit events checked against original captured log and published excerpt; 3 pod events checked against ES documents; 1 Job event checked against captured timestamped logs",
+  "events": [
+    {
+      "sequence": 1,
+      "timestamp_utc": "2026-11-06T11:08:01.723654Z",
+      "description": "`kubernetes-admin` проверяет разрешения через `selfsubjectrulesreviews`, ответ 201. Начало наблюдаемой разведки; первичный доступ произошёл ранее или вне доступных данных.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "2993781b-f5a8-44d5-825e-26d11b1aa2d9",
+        "published_excerpt": "evidence/audit-events.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 2,
+      "timestamp_utc": "2026-11-06T11:08:02.800411Z",
+      "description": "Список namespaces, ответ 200.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "5cadc193-8461-49dc-a2c5-3d480110381d",
+        "published_excerpt": "evidence/audit-events.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 3,
+      "timestamp_utc": "2026-11-06T11:08:04.137023Z",
+      "description": "Список ResourceQuota, ответ 200.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "2c561636-6904-4017-8a59-a2919bd213f8",
+        "published_excerpt": "evidence/audit-events.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 4,
+      "timestamp_utc": "2026-11-06T11:08:05.226155Z",
+      "description": "Создан namespace `monitoring-system`, ответ 201.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "f2064347-2325-49d9-bd36-7b4fb37d4bbf",
+        "published_excerpt": "evidence/audit-events.json",
+        "correlated_siem_index": "k8s-audit-2026.11.06"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 5,
+      "timestamp_utc": "2026-11-06T11:08:08.146652Z",
+      "description": "Создан под `metrics-collector`, ответ 201; shell-команда содержит `stress-ng` и HTTP POST.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "d2f4227c-76d4-440b-84ca-3374607f23c8",
+        "published_excerpt": "evidence/audit-events.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 6,
+      "timestamp_utc": "2026-11-06T11:08:13.683100447Z",
+      "description": "Контейнер пишет «Metrics collector starting…».",
+      "source": {
+        "type": "elasticsearch_document",
+        "index": "k8s-pods-2026.11.06",
+        "document_id": "J0CMsKEBq35JGyd5RiPG",
+        "field": "log (leading CRI timestamp)",
+        "published_excerpt": "evidence/pod-log-excerpts.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 7,
+      "timestamp_utc": "2026-11-06T11:08:14.985235934Z",
+      "description": "`stress-ng` сообщает «dispatching hogs: 2 cpu». Фактический запуск CPU-нагрузки.",
+      "source": {
+        "type": "elasticsearch_document",
+        "index": "k8s-pods-2026.11.06",
+        "document_id": "LkCMsKEBq35JGyd5RiPG",
+        "field": "log (leading CRI timestamp)",
+        "published_excerpt": "evidence/pod-log-excerpts.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 8,
+      "timestamp_utc": "2026-11-06T11:08:15.229137364Z",
+      "description": "Ответ внешнего сервиса содержит URL `http://httpbin.org/post`; отправляется демонстрационный JSON метрик.",
+      "source": {
+        "type": "elasticsearch_document",
+        "index": "k8s-pods-2026.11.06",
+        "document_id": "PUCMsKEBq35JGyd5RiPG",
+        "field": "log (leading CRI timestamp)",
+        "published_excerpt": "evidence/pod-log-excerpts.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 9,
+      "timestamp_utc": "2026-11-06T11:08:17.023050Z",
+      "description": "Создан CronJob `metrics-maintenance`, расписание `*/5 * * * *`, ответ 201.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "d99bbe32-128e-4f23-b241-0208e85ae7ad",
+        "published_excerpt": "evidence/audit-events.json",
+        "correlated_siem_index": "k8s-audit-2026.11.06"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 10,
+      "timestamp_utc": "2026-11-06T11:10:01.081774Z",
+      "description": "Контроллер CronJob создаёт Job `metrics-maintenance-29899390`, ответ 201. Это автоматическое продолжение расписания.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "aa15b601-d12a-49a0-9dda-d732c9c5d2bd",
+        "published_excerpt": "evidence/audit-events.json"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 11,
+      "timestamp_utc": "2026-11-06T11:10:11.723360Z",
+      "description": "SA `system:serviceaccount:monitoring-system:default` пытается прочитать `metrics-collector` и получает **403 Forbidden**.",
+      "source": {
+        "type": "original_kubernetes_audit",
+        "path": "/var/log/kubernetes/audit/audit.log",
+        "field": "stageTimestamp",
+        "stage": "ResponseComplete",
+        "auditID": "8cf205d3-a180-4319-8913-4de3bb40fd58",
+        "published_excerpt": "evidence/audit-events.json",
+        "correlated_siem_index": "k8s-audit-2026.11.06"
+      },
+      "verified_against_preserved_evidence": true
+    },
+    {
+      "sequence": 12,
+      "timestamp_utc": "2026-11-06T11:10:11.729579655Z",
+      "description": "Job печатает «Recovery workflow initiated». Это `echo`, а не успешное восстановление.",
+      "source": {
+        "type": "kubectl_logs",
+        "pod": "metrics-maintenance-29899390-bmb4p",
+        "namespace": "monitoring-system",
+        "field": "leading timestamp from kubectl logs --timestamps",
+        "published_excerpt": "evidence/runtime-check.txt",
+        "line": 175
+      },
+      "verified_against_preserved_evidence": true
+    }
+  ]
+}
